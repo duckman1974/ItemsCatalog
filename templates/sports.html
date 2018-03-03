@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Sport Catalog</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+	<body>
+		<div class="text-right">
+			{%if 'username' not in session %}
+			<a href="{{url_for('login')}}">Log In</a>
+			{% else %}
+			<a href="{{url_for('gdisconnect')}}">LogOut</a>
+			{% endif %}
+		</div>
+
+		<!-- https://www.google.com/search?q=sports+pic&client=firefox-b-1&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjOu86ZvqrYAhUk_IMKHXVKCckQ7AkIQg&biw=1259&bih=911#imgrc=hKQR1-9BZEEfcM: -->
+		<div class="container">
+			<header class="page-header">
+				<div class="row">
+					<div class="col-xs-12">
+							<h1 class="text-center">Sports</h1>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<div class="main">
+
+			<a href = "{{url_for('newSport')}}"><h4>Create a New Sport Category</h4></a>
+			<br><br>
+
+			{% for sport in sports %}
+
+
+					<a href = "{{url_for('showItems', sport_id = sport.id)}}"><h3>{{sport.name}}</h3></a>
+					<a href = "{{url_for('editSport', sport_id = sport.id)}}"><h5>Edit</p></h5>
+					<a href = "{{url_for('deleteSport', sport_id = sport.id)}}"><h5>Delete</p></h5>
+
+
+			{% endfor %}
+
+		</div>
+		<br><br><br><br>
+
+		<!-- Contact information -->
+		<div class="container">
+			<footer>
+				<div class="row">
+					<div class="col-xs-12">
+						<p class="footer-name">Posted by: Kevin Reese </p>
+						<p class="footer-email">Email: <a href="mailto:krduckman@bellsouth.net">krduckman@bellsouth.net</a></p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+
+</html>

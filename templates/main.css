@@ -1,0 +1,85 @@
+
+/* This is the main css page */
+
+h1, h6 {
+  /* color: #2d3c49; */
+  margin-top: 0.75rem;
+  margin-right: 30px;
+  margin-left: 30px;
+  /* text-align: right; */
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1 {
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+
+h4, footer {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+footer {
+  margin-bottom: 30px;
+  background-color: #bcc6cc;
+  height: 60px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .img-responsive {
+  border-radius: 0.468rem;
+  margin-top: 30px;
+  background-color: #eee;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  float: right;
+  padding-right: 30px;
+  padding-left: 30px;
+  min-width: 100%;
+} */
+
+.page-header {
+  background-color: #45e3d7e6;
+  margin-right: 30px;
+  margin-left: 30px;
+
+}
+/*  */
+/* .feature-work {
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #eee;
+  margin-top: 30px;
+} */
+
+/* .main-img {
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #eee;
+} */
+
+.feature-title {
+  margin-top: 30px;
+}
+
+p {
+  text-align: center;
+}
+
+.main {
+
+  background-color: gray;
+  /* width: 100%; */
+  /* background-image: url({{ url_for('static', filename='/static/img/sports.jpg')}}); */
+
+}

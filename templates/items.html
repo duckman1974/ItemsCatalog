@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+	<body>
+		<div class = "pane">
+			<div class="container">
+				<header class="page-header">
+					<div class="row">
+						<div class="col-xs-12">
+							<h1>{{sport.name}}</h1>
+						</div>
+					</div>
+				</div>
+			<br><br>
+
+			<a href = "{{url_for('showSports')}}"><h4>BACK TO MAIN</h4></a>
+			<br>
+			<a href = "{{url_for('createSportItem', sport_id = sport.id)}}"><h5>Create a new item</h5></a>
+			<br>
+
+			{% for sportItem in sportItems %}
+
+			<p>
+				<h3>{{sportItem.name}}</h3>
+				<h5>{{sportItem.price}}</h5>
+				<h5>{{sportItem.description}}</h5>
+			</p>
+			<p>
+					<a href = "{{url_for('editSportItem', sport_id=sport.id, catalog_items_id=sportItem.id)}}"><h6>Edit</h6></a>
+					<a href = "{{url_for('deleteSportItem', sport_id=sport.id, catalog_items_id=sportItem.id)}}"><h6>Delete</h6></a>
+					<br>
+			</p>
+
+			{% endfor %}
+
+		</div>
+	</body>
+
+</html>
